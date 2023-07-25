@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Signin</title>
+</head>
+<body>
+    <form method="POST" action="/signin">
+        <!-- Heading -->
+        <h4>
+        Log in to your account
+        </h4>
+
+        <!-- Subheading -->
+        <p >
+        Please fill up your information below to sign in.
+        </p>
+        <!-- Full Name -->
+        <div>
+            <label>FullName*</label>
+            <div>
+                <input type="name"  name="full_name" minlength="1">
+            </div>
+        </div>
+        <!-- User Name -->
+        <div>
+            <label>UserName*</label>
+            <div>
+                <input type="name"  name="username" minlength="1">
+            </div>
+        </div>
+        <!-- Bio -->
+        <div>
+            <label>Bio(maximum of 280 letters)*</label>
+            <div>
+                <input type="name"  name="bio" maxlength="280">
+            </div>
+        </div>
+        <!-- Email -->
+        <div>
+            <label>Email address*</label>
+            <div>
+                <input type="email"  name="email" id="emailStr" required>
+            </div>
+        </div>
+
+        <!-- Password -->
+        <div>
+            <label>Password*</label>
+            <div class="input-group">
+                <input type="password"  name="password" minlength="6">
+            </div>
+        </div>
+        
+        <!-- Button -->
+        <div>
+             <input type="submit"/>
+        </div>
+    </form>
+    <br>
+    <a href="/home"><button>signup</button></a>
+</body>
+</html>
