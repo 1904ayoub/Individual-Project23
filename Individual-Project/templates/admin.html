@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Travel.It - Admin</title>
+    <link rel="stylesheet" href="static/css/style2.css">
+</head>
+<body>
+    <!-- Background Image Container -->
+    <div class="background-container"></div>
+
+    <div class="container">
+        <h4>Data Base of the Places</h4>
+        <p>Please fill up your information below.</p>
+
+        <form method="POST" action="/admin" enctype="multipart/form-data">
+                    <!-- Heading -->
+        <h4>
+            Data Base of the places
+        </h4>
+
+        <!-- Subheading -->
+        <p >
+            Please fill up your information below.
+        </p>
+        <div>
+            <label>Country *</label>
+            <div>
+                <input type="name"  name="country" minlength="1" required>
+            </div>
+        </div>
+        <div>
+            <label>Discrption*</label>
+            <div>
+                <input type="text"  name="discrption" minlength="1" required>
+            </div>
+        </div>
+        <div>
+            <label>Links</label>
+            <div>
+                <input type="text" name="links">
+            </div>
+        </div>
+        <div>
+            <label>Photo(links only)*</label>
+            <div>
+                <input type="file" name="photo" accept="image/*">
+        </div>
+        
+        <!-- Button -->
+        <div>
+             <input type="submit" value="Upload" />
+        </div>
+        </form>
+
+        <br>
+        <a href="/home"><button>Back Home</button></a>
+    </div>
+</body>
+</html>

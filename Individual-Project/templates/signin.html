@@ -1,11 +1,18 @@
-<!DOCTYPE html>
+ <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Signin</title>
+    <title>Travel.It - Sign In</title>
+    <link rel="stylesheet" href="static/css/style1.css">
 </head>
 <body>
-    <form method="POST" action="/signin">
+    <!-- Background Image Container -->
+    <div class="background-container"></div>
+
+    <div class="container">
+        <h1>Welcome back to Travel.It</h1>
+        <p>Please sign in to access your account.</p>
+        <form method="POST" action="/signin">
         <!-- Heading -->
         <h4>
         Log in to your account
@@ -15,27 +22,6 @@
         <p >
         Please fill up your information below to sign in.
         </p>
-        <!-- Full Name -->
-        <div>
-            <label>FullName*</label>
-            <div>
-                <input type="name"  name="full_name" minlength="1">
-            </div>
-        </div>
-        <!-- User Name -->
-        <div>
-            <label>UserName*</label>
-            <div>
-                <input type="name"  name="username" minlength="1">
-            </div>
-        </div>
-        <!-- Bio -->
-        <div>
-            <label>Bio(maximum of 280 letters)*</label>
-            <div>
-                <input type="name"  name="bio" maxlength="280">
-            </div>
-        </div>
         <!-- Email -->
         <div>
             <label>Email address*</label>
@@ -57,7 +43,9 @@
              <input type="submit"/>
         </div>
     </form>
-    <br>
-    <a href="/home"><button>signup</button></a>
+        <div class="button-container">
+            <a href="/home" class="btn">Sign In</a>
+        </div>
+    </div>
 </body>
 </html>

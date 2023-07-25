@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Top Countries to Travel</title>
+    <link rel="stylesheet" href="static/css/style3.css"> <!-- Add your custom CSS file link here -->
+</head>
+<body>
+    <!-- Background Image Container -->
+    <div class="background-container"></div>
+
+    <div class="container">
+        <h1>Top Countries to Travel</h1>
+        <p>Discover the best travel destinations in the world!</p>
+
+        <div class="countries-list">
+        {%for country in countries%}
+            <div class="country-item">
+                 
+                <img src="{{countries[country]['photo']}}" alt='The Flag Of Country'>  
+                <h2>{{countries[country]['country']}}</h2>
+                <p>{{countries[country]['discrption']}}</p>
+                <a href="{{countries[country]['links']}}">Read More</a>
+                
+            </div>
+        {%endfor%}    
+        </div>
+    </div>
+</body>
+</html>

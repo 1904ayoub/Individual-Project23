@@ -1,56 +1,55 @@
- <!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Signup</title>
+    <title>Travel.It - Sign Up</title>
+    <link rel="stylesheet" href="static/css/style1.css">
 </head>
 <body>
-    <form method="POST" action="/signup">
-        <!-- Heading -->
-        <h4>
-            Create an account
-        </h4>
+    <!-- Background Image Container -->
+    <div class="background-container"></div>
 
-        <!-- Subheading -->
-        <p >
-            Please fill up your information below to sign up.
-        </p>
-        <!-- Full Name -->
-        <div>
-            <label>FullName*</label>
-            <div>
-                <input type="name"  name="full_name" minlength="1">
-            </div>
-        </div>
-        <!-- User Name -->
-        <div>
-            <label>UserName*</label>
-            <div>
-                <input type="name"  name="username" minlength="1">
-            </div>
-        </div>
-        <!-- Email -->
-        <div>
-            <label>Email address*</label>
-            <div>
-                <input type="email"  name="email" id="emailStr" required>
-            </div>
-        </div>
+    <div class="container">
+        <h1>Create an Account</h1>
+        <p>Please fill up your information below to sign up.</p>
 
-        <!-- Password -->
-        <div>
-            <label>Password*</label>
-            <div class="input-group">
-                <input type="password"  name="password" minlength="6">
+        <form method="POST" action="/signup">
+            <!-- Full Name -->
+            <div>
+                <label>Full Name*</label>
+                <div>
+                    <input type="name" name="full_name" minlength="1">
+                </div>
             </div>
-        </div>
-        
-        <!-- Button -->
-        <div>
-             <input type="submit"/>
-        </div>
-    </form>
-    <br>
-    <a href="/signin"><button>signin</button></a>
+            <!-- User Name -->
+            <div>
+                <label>Username*</label>
+                <div>
+                    <input type="name" name="username" minlength="1">
+                </div>
+            </div>
+            <!-- Email -->
+            <div>
+                <label>Email address*</label>
+                <div>
+                    <input type="email" name="email" id="emailStr" required>
+                </div>
+            </div>
+            <!-- Password -->
+            <div>
+                <label>Password*</label>
+                <div class="input-group">
+                    <input type="password" name="password" minlength="6">
+                </div>
+            </div>
+            <!-- Button -->
+            <div>
+                <input type="submit" class="btn" value="Sign Up">
+            </div>
+        </form>
+
+        <br>
+        <a href="/signin" class="btn">Sign In</a>
+    </div>
 </body>
 </html>
