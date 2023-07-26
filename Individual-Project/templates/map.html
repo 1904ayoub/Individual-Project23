@@ -16,8 +16,7 @@
         <div class="countries-list">
         {%for country in countries%}
             <div class="country-item">
-                 
-                <img src="{{countries[country]['photo']}}" alt='The Flag Of Country'>  
+                <img src="{{countries[country]['photo']}}" alt="{{ countries[country]['country'] }} Flag">
                 <h2>{{countries[country]['country']}}</h2>
                 <p>{{countries[country]['discrption']}}</p>
                 <a href="{{countries[country]['links']}}">Read More</a>
@@ -25,6 +24,7 @@
             </div>
         {%endfor%}    
         </div>
+        <a href="/home" class="btn">Back Home</a> <!-- Add the 'btn' class to the anchor link -->
     </div>
 </body>
 </html>

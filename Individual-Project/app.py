@@ -2,6 +2,8 @@ from flask import Flask, render_template, request, redirect, url_for, flash
 from flask import session as login_session
 import pyrebase
 import os 
+
+
 config = {
   "apiKey": "AIzaSyDy556hNFgqo526c0q85OYleiKVlMgp2p0",
   "authDomain": "travelit2023.firebaseapp.com",
@@ -18,7 +20,7 @@ db=firebase.database()
 
 app = Flask(__name__, template_folder='templates', static_folder='static')
 app.config['SECRET_KEY'] = 'super-secret-key'
-UPLOAD_FOLDER = 'uploads'
+UPLOAD_FOLDER = 'static/uploads'
 app.config['UPLOAD_FOLDER'] = UPLOAD_FOLDER
 @app.route('/')
 def  intro():
@@ -57,7 +59,7 @@ def signin():
 def signout():
     login_session['user'] = None
     auth.current_user = None
-    return redirect(url_for('int'))
+    return redirect(url_for('intro'))
 @app.route('/home')
 def home():
 
@@ -70,12 +72,15 @@ def admin():
     except:
         return redirect(url_for('home'))
     if   info['admin']=='True':     
-        if request.method == 'POST':
+        if request.method == 'POST' and request.files['photo'] != None:
             country = request.form['country']
             discrption = request.form['discrption']
             links= request.form['links']
             image= request.files['photo']
             filename = image.filename
+            UPLOAD_FOLDER = os.path.join('static', 'uploads')
+            if not os.path.exists(UPLOAD_FOLDER):
+                os.makedirs(UPLOAD_FOLDER)
             image_filename=os.path.join(app.config['UPLOAD_FOLDER'], filename)
             image.save(image_filename)
             country={"country":country,"discrption":discrption,"links":links,"photo":image_filename}
@@ -87,8 +92,12 @@ def admin():
         return redirect(url_for('home'))
 @app.route('/map')
 def map():
-        countries=db.child('Countries').get().val()
-        return render_template('map.html',countries=countries)
+    countries = db.child('Countries').get().val()
+    return render_template('map.html', countries=countries)
+@app.route('/allmap')
+def allmap():
+    countries = db.child('Countries').get().val()
+    return render_template('allmap.html', countries=countries)
 
 if __name__ == '__main__':
     app.run(debug=True)
