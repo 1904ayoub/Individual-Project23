@@ -62,7 +62,6 @@ def signout():
     return redirect(url_for('intro'))
 @app.route('/home')
 def home():
-
     return render_template('home.html')
 @app.route('/admin',methods=['GET', 'POST'])
 def admin():
